@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.acao
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Adicionar</h1>
+
+<h4>ação</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="selecionarProjeto" class="control-label">Selecionar Projeto</label>
+                <input asp-for="selecionarProjeto" class="form-control" />
+                <span asp-validation-for="selecionarProjeto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adicionarAcao" class="control-label">Adicionar Ação</label>
+                <input asp-for="adicionarAcao" class="form-control" />
+                <span asp-validation-for="adicionarAcao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dataHora" class="control-label">Data e Hora</label>
+                <input asp-for="dataHora" class="form-control" />
+                <span asp-validation-for="dataHora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="statusAcao" class="control-label">Status da Ação</label>
+                <input asp-for="statusAcao" class="form-control" />
+                <span asp-validation-for="statusAcao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="emailUsuario" class="control-label">email</label>
+                <input asp-for="emailUsuario" class="form-control" />
+                <span asp-validation-for="emailUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdProjeto" class="control-label"></label>
+                <input asp-for="IdProjeto" class="form-control" />
+                <span asp-validation-for="IdProjeto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

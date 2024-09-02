@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApplication1.Models.anexo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Anexp</h1>
+
+<p>
+    <a asp-action="Create">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                PDF Planta
+            </th>
+            <th>
+                Planta PDF
+            </th>
+            <th>
+               Orçamento do Projeto
+            </th>
+            <th>
+               Orçamento
+            </th>
+            <th>
+                Anexos Outros
+            </th>
+            <th>
+                Outros Anexos
+            </th>
+            <th>
+               Assinatura
+            </th>
+            <th>
+        .Assinatura PDF
+            </th>
+            <th>
+         IdProjeto
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PDFPlanta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlantaPdf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrcamentoProjeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orcamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnexosOutros)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutrosAnexos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assinatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssinaturaPdf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProjeto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdAnexo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdAnexo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdAnexo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,73 @@
+﻿@model WebApplication1.Models.projeto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Adicionar</h1>
+
+<h4>projeto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeProjeto" class="control-label">Nome</label>
+                <input asp-for="NomeProjeto" class="form-control" />
+                <span asp-validation-for="NomeProjeto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataInicioProjeto" class="control-label">Data Inicial</label>
+                <input asp-for="DataInicioProjeto" class="form-control" />
+                <span asp-validation-for="DataInicioProjeto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataFinalProjeto" class="control-label">Data Final</label>
+                <input asp-for="DataFinalProjeto" class="form-control" />
+                <span asp-validation-for="DataFinalProjeto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Casa" class="control-label">Casa</label>
+                <input asp-for="Casa" class="form-control" />
+                <span asp-validation-for="Casa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="valorEstimado" class="control-label">Valor Estimado</label>
+                <input asp-for="valorEstimado" class="form-control" />
+                <span asp-validation-for="valorEstimado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnoAprovacao" class="control-label">Ano de aprovação</label>
+                <input asp-for="AnoAprovacao" class="form-control" />
+                <span asp-validation-for="AnoAprovacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroAprovacao" class="control-label">Numero de aprovação</label>
+                <input asp-for="NumeroAprovacao" class="form-control" />
+                <span asp-validation-for="NumeroAprovacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="situacao" class="control-label">Situação</label>
+                <input asp-for="situacao" class="form-control" />
+                <span asp-validation-for="situacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdUsuario" class="control-label">IdUsuario</label>
+                <input asp-for="IdUsuario" class="form-control" />
+                <span asp-validation-for="IdUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
